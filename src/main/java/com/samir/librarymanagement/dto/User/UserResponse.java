@@ -1,5 +1,6 @@
 package com.samir.librarymanagement.dto.User;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -8,7 +9,5 @@ import lombok.Data;
 public class UserResponse {
         private Long id;
         private String name;
-        private String password;
-    public UserResponse(Long id, String name) {
-    }
+        private String email;
 }

@@ -1,6 +1,7 @@
 package com.samir.librarymanagement.dto.User;
 
 import jakarta.persistence.Column;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 @Data
@@ -9,6 +10,9 @@ public class UserRequest {
         private String userName;
         @NotBlank
         private String password;
+        @NotBlank
+        @Email
+        private String email;
         @NotBlank
         private String role;
 

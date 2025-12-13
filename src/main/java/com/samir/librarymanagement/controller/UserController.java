@@ -10,9 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/user")
 public class UserController {
     public final UserService userService;
 
@@ -24,12 +26,10 @@ public class UserController {
     {
         UserResponse userResponse = userService.register(userRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(userResponse);
-
     }
     @PostMapping("/login")
-    public ResponseEntity<Void> login(@RequestBody UserRequest userRequest)
+    public String login(@RequestBody UserRequest userRequest)
     {
-        userService.login(userRequest);
-        return ResponseEntity.noContent().build();
+      return  userService.verify(userRequest);
     }
 }

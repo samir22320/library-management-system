@@ -15,6 +15,7 @@ public class User {
     @SequenceGenerator(name = "userId",sequenceName = "userId",allocationSize = 1)
     private Long id;
     private String userName;
+    private String email;
     private String password;
     private String role;
 }

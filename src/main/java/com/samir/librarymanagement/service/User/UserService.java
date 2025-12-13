@@ -7,4 +7,7 @@ public interface UserService {
     UserResponse register(UserRequest userRequest);
 
     void login(UserRequest userRequest);
+
+
+    String verify(UserRequest userRequest);
 }
